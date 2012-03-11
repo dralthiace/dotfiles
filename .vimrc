@@ -2,7 +2,10 @@
 """ files updated across multiple systems.
 """
 """ Initial installation of this file is performed with the command:
-"""    git clone https://dralthiace@github.com/dralthiace/sort-shows.pl.git ~/
+"""    git init
+"""    git remote add -t master origin \
+"""                   https://dralthiace@github.com/dralthiace/dotfiles.git ~/
+"""    git pull
 """    git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle                                                    ~/.vim/bundle/vundle
 """    vim
 """    :BundleInstall   (type this within vim)
@@ -15,6 +18,9 @@
 """ Update the git repo with changes in local file
 """    git commit -am '<description of changes'
 """    git push -u origin master
+"""
+"""
+""" (NOTE: All above commands should be executed from your home directory)
 """
 
 """"""""""""""""""""""""
