@@ -1,0 +1,17 @@
+hardstatus alwayslastline
+hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %m-%d %{W}%c %{g}]'
+startup_message off
+vbell off
+autodetach on
+defscrollback 30000
+#termcapinfo xterm ti@:te@
+bindkey "^k" eval "copy" "stuff ^b"  # enter copy mode and move up one page
+bindkey -m "^k" stuff ^b             # move up one page
+terminfo * F1=\E[23~
+terminfo * F2=\E[24~
+bindkey -k F1 prev      # F11 = prev
+bindkey -k F2 next      # F12 = next
+attrcolor b ".I" 
+termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm' 
+defbce "on" 
+term screen-256color-bce 
