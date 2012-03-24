@@ -44,13 +44,18 @@ Bundle 'tpope/vim-surround'
 "Bundle 'Lokaltog/vim-easymotion'
 "Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'tpope/vim-rails.git'
+Bundle 'tpope/vim-rake'
 Bundle 'tpope/vim-repeat'
-"Bundle 'jpo/vim-railscasts-theme'
+Bundle 'vim-ruby/vim-ruby'
+"Bundle 'jpo/vim-railscasts-theme' "This doesn't work in teminal
 Bundle 'jgdavey/vim-railscasts'
 " vim-scripts repos
 "Bundle 'L9'
 "Bundle 'FuzzyFinder'
 Bundle 'matchit.zip'
+Bundle 'project.tar.gz'
+"Bundle 'AutoComplPop'
+"Bundle 'rubycomplete.vim'
 " non github repos
 "Bundle 'git://git.wincent.com/command-t.git'
 " ...
@@ -82,6 +87,19 @@ let g:miniBufExplMapWindowNavVim = 1
 let g:miniBufExplMapWindowNavArrows = 1
 let g:miniBufExplMapCTabSwitchBufs = 1
 let g:miniBufExplModSelTarget = 1
+
+" Auto/Omni Complete Settings
+let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
+let g:SuperTabContextTextOmniPrecedence = ['&omnifunc', '&completefunc']
+let g:SuperTabCompletionContexts = ['s:ContextText', 's:ContextDiscover']
+let g:SuperTabContextDiscoverDiscovery = ["&completefunc:<c-x><c-u>", "&omnifunc:<c-x><c-o>"]
+
+" Ruby Code Complete settings
+autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
+autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
+autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 
 " alt+n or alt+p to navigate between entries in QuickFix
 map <silent> <m-p> :cp <cr>
@@ -132,6 +150,6 @@ set laststatus=2  " Always show status line.
 
 set directory=~/.vim
 
-" complie stuff
+" complie stuff with the F5 key
 set makeprg=ruby\ %
 nnoremap <f5> :make<return>
